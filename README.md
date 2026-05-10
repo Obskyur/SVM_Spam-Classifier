@@ -21,7 +21,25 @@ A hands-on project exploring Support Vector Machines (SVM) for binary text class
 3. Train a linear SVM (`LinearSVC`) on a training split
 4. Evaluate with accuracy, confusion matrix, and precision/recall/F1
 5. Plot a learning curve (accuracy vs. training set size)
-6. (Optional) Repeat with TF-IDF features and compare results
+6. Plot a hyperparameter sweep (accuracy vs. `C`)
+
+## Results Summary
+
+### **Iteration 1** — LinearSVC, C=1.0, Bag of Words
+
+<img src="images/confusion_matrix.png" width="400"/>
+
+| Metric | Score |
+|---|---|
+| Test accuracy | 0.9830 |
+| Ham F1 | 0.9916 |
+| Spam F1 | 0.9319 |
+| Spam precision | 1.0000 (zero false positives) |
+| Spam recall | 0.8725 (13% of spam missed) |
+
+The model achieves perfect spam precision — no legitimate mail was incorrectly flagged. Recall is lower at 0.87, meaning ~13% of spam slipped through. For a spam filter this is the preferred tradeoff. See [RESULTS.md](RESULTS.md) for full analysis.
+
+---
 
 ## Setup
 
