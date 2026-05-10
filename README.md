@@ -61,6 +61,20 @@ TF-IDF introduces a small number of false positives (ham flagged as spam) in exc
 
 TF-IDF improves spam recall from 0.8725 → 0.8993 at the cost of introducing a small number of false positives (precision 1.0000 → 0.9853).
 
+### **Iteration 3** — BoW + decision threshold = -0.3392
+
+
+<img src="images/confusion_matrix_threshold.png" width="400"/>
+
+| Metric | Score |
+|---|---|
+| Test accuracy | 0.9874 (best so far) |
+| Spam F1 | 0.9514 (best so far) |
+| Spam precision | 0.9856 |
+| Spam recall | 0.9195 (best so far) |
+
+Lowering the decision threshold on the BoW model (no retraining) outperforms TF-IDF on all key metrics. See [RESULTS.md](RESULTS.md) for full analysis.
+
 ---
 
 ## Setup
