@@ -39,6 +39,28 @@ A hands-on project exploring Support Vector Machines (SVM) for binary text class
 
 The model achieves perfect spam precision — no legitimate mail was incorrectly flagged. Recall is lower at 0.87, meaning ~13% of spam slipped through. For a spam filter this is the preferred tradeoff. See [RESULTS.md](RESULTS.md) for full analysis.
 
+### **Iteration 2** — LinearSVC, C=1.0, TF-IDF
+
+TF-IDF introduces a small number of false positives (ham flagged as spam) in exchange for catching more spam:
+
+| | BoW | TF-IDF |
+|---|---|---|
+| False Positives (Type I) | 0 | ~2 |
+| False Negatives (Type II) | ~19 | ~15 |
+
+<img src="images/confusion_matrix_tfidf.png" width="400"/>
+
+| Metric | Score |
+|---|---|
+| Test accuracy | 0.9848 (+0.0018 vs. BoW) |
+| Spam F1 | 0.9404 (+0.0085 vs. BoW) |
+| Spam precision | 0.9853 |
+| Spam recall | 0.8993 (+0.0268 vs. BoW) |
+
+<img src="images/c_sweep_tfidf.png" width="480"/>
+
+TF-IDF improves spam recall from 0.8725 → 0.8993 at the cost of introducing a small number of false positives (precision 1.0000 → 0.9853).
+
 ---
 
 ## Setup
